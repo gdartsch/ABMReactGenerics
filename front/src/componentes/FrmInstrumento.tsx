@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 import { resolveModuleNameFromCache } from 'typescript';
-import { getInstrumentosPorIdFetch, saveInstrumento } from './FuncionesApi';
+import { getInstrumentosPorIdFetch, saveInstrumento } from '../api/FuncionesApi';
 import { Navigation } from './Navigation';
-import Instrumento from './Instrumento';
+import Instrumento from '../modelos/Instrumento';
 
 
 export const FrmInstrumento = () => {

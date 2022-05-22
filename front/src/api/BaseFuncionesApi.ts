@@ -1,4 +1,4 @@
-import { iBaseFuncionesApi } from "./iBaseFuncionesApi";
+import { iBaseFuncionesApi } from './interfaces/iBaseFuncionesApi';
 
 export class BaseFuncionesApi<T> implements iBaseFuncionesApi<T> {
     constructor(private urlServer: string) { }

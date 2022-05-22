@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import { Alert, Button, Card, Col, Container, Row } from 'react-bootstrap';
 import { DetalleInstrumento } from './DetalleInstrumento';
 import { useNavigate, useParams } from 'react-router-dom';
-import { deleteInstrumentoPorId, getInstrumentosJSONFetch, getInstrumentosPorIdFetch } from './FuncionesApi';
+import { deleteInstrumentoPorId, getInstrumentosJSONFetch, getInstrumentosPorIdFetch } from '../api/FuncionesApi';
 import { Navigation } from './Navigation';
-import Instrumento from './Instrumento';
+import Instrumento from '../modelos/Instrumento';
 
 
 export const GrillaInstrumentos = () => {

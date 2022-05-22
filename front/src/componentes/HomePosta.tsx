@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ItemInstrumento } from './ItemInstrumento';
 import { Navigation } from './Navigation';
-import Instrumento from './Instrumento';
 import { Alert, Button, Card, Col, Container, Nav, Row } from 'react-bootstrap';
 
 

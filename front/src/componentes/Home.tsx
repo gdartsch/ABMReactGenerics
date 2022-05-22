@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { getInstrumentosJSONFetch, getInstrumentosPorBusqueda } from './FuncionesApi';
+import { getInstrumentosJSONFetch, getInstrumentosPorBusqueda } from '../api/FuncionesApi';
 import { ItemInstrumento } from './ItemInstrumento';
 import { Navigation } from './Navigation';
-import Instrumento from './Instrumento';
+import Instrumento from '../modelos/Instrumento';
 import { Alert, Button, Card, Container, Row } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 
@@ -14,7 +14,6 @@ export const Home = () => {
   const [instrumentos, setInstrumentos] = useState<Instrumento[]>([]);
     
     const getInstrumentos = async () => {
-      console.log("TERMINO " + termino);
       if(termino && termino != ""){
         let datos:Instrumento[] = await getInstrumentosPorBusqueda(termino);
         setInstrumentos(datos);

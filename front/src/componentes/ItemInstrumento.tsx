@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import Instrumento from './Instrumento';
+import Instrumento from '../modelos/Instrumento';
 import { Button, Card, Col, Container, Nav, Row } from 'react-bootstrap';
 
 type InstrumentoParams = {

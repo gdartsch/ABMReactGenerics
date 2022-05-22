@@ -1,7 +1,10 @@
 import { BaseFuncionesApi } from "./BaseFuncionesApi";
-import Instrumento from "./Instrumento";
 
 export class FuncionesApiGenerics<T> extends BaseFuncionesApi<T> {
+
+	constructor() {
+		super('http://localhost:3001/api/instrumentos');
+	}
 
 	async getAll(): Promise<T[]> {
 		let urlServer = "http://localhost:3001/api/instrumentos/";
@@ -58,7 +61,7 @@ export class FuncionesApiGenerics<T> extends BaseFuncionesApi<T> {
 	async save(elemento?: T, id?: number): Promise<void> {
 		let urlServer = 'http://localhost:3001/api/instrumentos';
 		let method:string = "POST";
-		if(elemento){
+		if(elemento && id! > 0){
 			urlServer = 'http://localhost:3001/api/instrumentos/'+id;
 			method = "PUT";
 		}

@@ -1,6 +1,5 @@
 import React, { Component, Suspense } from 'react';
 //import logo from './logo.svg';
-import './App.css';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import { Home } from './componentes/Home';
 import { DetalleInstrumento } from './componentes/DetalleInstrumento';
@@ -8,6 +7,7 @@ import { HomePosta } from './componentes/HomePosta';
 import { DondeEstamos } from './componentes/DondeEstamos';
 import { FrmInstrumento } from './componentes/FrmInstrumento';
 import { GrillaInstrumentos } from './componentes/GrillaInstrumentos';
+import 'bootstrap/dist/css/bootstrap.css';
 
 
 class AppRutas extends Component{

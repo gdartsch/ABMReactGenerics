@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 
 import { useParams } from 'react-router-dom';
 import { Navigation } from './Navigation';
-import Instrumento from './Instrumento';
 import { Col, Container, ListGroup, Nav, Row } from 'react-bootstrap';
 
 

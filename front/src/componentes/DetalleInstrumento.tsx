@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
 import { useParams } from 'react-router-dom';
-import { getInstrumentosPorIdFetch } from './FuncionesApi';
+import { getInstrumentosPorIdFetch } from '../api/FuncionesApi';
 import { Navigation } from './Navigation';
-import Instrumento from './Instrumento';
+import Instrumento from '../modelos/Instrumento';
 import { Col, Container, ListGroup, Nav, Row } from 'react-bootstrap';
 
 
