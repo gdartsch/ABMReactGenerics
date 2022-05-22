@@ -1,47 +1,26 @@
 const router = require('express').Router();
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
+const { findAllInstruments, 
+        findInstrumentbyId, 
+        findInstrumentByName,
+        updateInstrument, 
+        saveInstrument, 
+        deleteInstrument } = 
+            require('../../controladores/funcionesApi');
 
 const { Instrumento } = require('../../db');
 
-router.get('/', async (req, res) => {
-    const instrumentos = await Instrumento.findAll();
-    res.json(instrumentos);
-});
+router.get('/', findAllInstruments);
 
-router.get('/:id', async (req, res) => {
-    const instrumento = await Instrumento.findByPk(req.params.id);
-    res.json(instrumento);
-});
+router.get('/:id', findInstrumentbyId);
 
-router.get('/busqueda/:nombre', async (req, res) => {
-    const instrumento = await Instrumento.findAll({
-        where: {
-            nombre: {
-                [Op.like]: `%${req.params.nombre}%`
-            }
-        }
-    });
-    res.json(instrumento);
-});
+router.get('/busqueda/:nombre', findInstrumentByName);
 
-router.post('/', async (req, res) => {
-    const instrumento = await Instrumento.create(req.body);
-    res.json(instrumento);
-});
+router.post('/', updateInstrument);
 
-router.put('/:id', async (req, res) => {
-    await Instrumento.update(req.body, {
-        where: { id: req.params.id }
-        });
-    res.json({success: 'Instrumento actualizado'});
-});
+router.put('/:id', saveInstrument);
 
-router.delete('/:id', async (req, res) => {
-    await Instrumento.destroy({
-        where: { id: req.params.id }
-        });
-    res.json({success: 'Instrumento eliminado'});
-});
+router.delete('/:id', deleteInstrument);
 
 module.exports = router;
